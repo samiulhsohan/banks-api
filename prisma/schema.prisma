@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Bank {
+  updatedAt DateTime @default(now())
+
+  id   String @id @default(cuid())
+  name String
+
+  Branch Branch[]
+}
+
+model Branch {
+  id            String  @id @default(cuid())
+  name          String
+  district      String?
+  routingNumber String
+
+  bank   Bank   @relation(fields: [bankId], references: [id])
+  bankId String
+}
