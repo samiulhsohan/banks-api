@@ -46,8 +46,15 @@ export default function Home() {
 
         <div className="mt-24 pb-10">
           <p className="text-slate-700 mb-4">
-            Something wrong? Please <a href="">create an issue on GitHub</a> or
-            write me on <a href="mailto:hi@sohan.dev">hi@sohan.dev</a>.
+            Something wrong? Please{" "}
+            <a
+              href="https://github.com/samiulhsohan/banks-api/issues/new"
+              target="_blank"
+              rel="noreferrer"
+            >
+              create an issue on GitHub
+            </a>{" "}
+            or write me on <a href="mailto:hi@sohan.dev">hi@sohan.dev</a>.
           </p>
           <p className="text-slate-700">Coded and maintained with ❤️</p>
         </div>
