@@ -27,7 +27,7 @@ export default function Home() {
             {`{BanksAPI}`}
           </h1>
           <p className="text-2xl mt-3 text-indigo-100">
-            APIs for getting Bangldeshi banks and their branch names.
+            APIs for getting Bangladeshi banks and their branch names.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 # BanksAPI
 
-BanksAPI is a simple REST API for getting Bangldeshi banks and their branch names.
+BanksAPI is a simple REST API for getting Bangladeshi banks and their branch names.
 
 ## Guide
 
