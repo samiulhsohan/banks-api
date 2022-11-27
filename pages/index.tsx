@@ -39,8 +39,12 @@ export default function Home() {
             url="https://banks-api.sohan.dev/api/banks"
           />
           <Route
+            title="Get all banks with branches"
+            url="https://banks-api.sohan.dev/api/banks?withBranches=true"
+          />
+          <Route
             title="Get a bank"
-            url="https://banks-api.sohan.dev/api/banks/{bankId}"
+            url="https://banks-api.sohan.dev/api/banks/claymybhs002wxbcwihfrotwo"
           />
         </div>
 

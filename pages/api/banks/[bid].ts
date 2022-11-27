@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "lib/prisma";
-import { bankSelect } from "../banks";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,7 +13,14 @@ export default async function handler(
   }
 
   const bank = await prisma.bank.findUnique({
-    select: bankSelect,
+    select: {
+      id: true,
+      name: true,
+      branches: {
+        select: { id: true, name: true, district: true, routingNumber: true },
+      },
+      updatedAt: true,
+    },
     where: { id: bid as string },
   });
 
