@@ -1,22 +1,41 @@
 import Head from "next/head";
 import Link from "next/link";
-import { IoLogoGithub } from "react-icons/io5";
+import { useEffect } from "react";
+import { useState } from "react";
+import { IoLogoGithub, IoStar } from "react-icons/io5";
 
 export default function Home() {
+  const [stargazers, setStargazers] = useState(0);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/samiulhsohan/banks-api")
+      .then((res) => res.json())
+      .then((data) => setStargazers(data.stargazers_count));
+  }, []);
+
   return (
     <div>
       <Head>
         <title>BanksAPI</title>
       </Head>
 
-      <nav className="py-6 container px-4 lg:lx-0 lg:max-w-[900px] mx-auto flex justify-between">
-        <Link href="/" className="text-indigo-600 font-bold">
+      <nav className="py-6 container px-4 lg:lx-0 lg:max-w-[900px] mx-auto flex justify-between items-center">
+        <Link href="/" className="text-indigo-600 font-bold text-lg">
           BanksAPI
         </Link>
 
         <div>
-          <a href="https://github.com/samiulhsohan/banks-api">
-            <IoLogoGithub size={20} className="text-slate-700" />
+          <a
+            href="https://github.com/samiulhsohan/banks-api"
+            className="inline-flex items-center hover:no-underline gap-1.5 group"
+          >
+            {stargazers > 0 && (
+              <div className="mt-[2px] border border-slate-400 rounded-md flex items-center px-2 py-0.5 gap-1.5 text-slate-500 group-hover:text-indigo-600 group-hover:border-indigo-600 transition">
+                <IoStar size={15} />
+                <p className="font-medium text-sm">{stargazers}</p>
+              </div>
+            )}
+            <IoLogoGithub size={24} className="text-slate-700" />
           </a>
         </div>
       </nav>
