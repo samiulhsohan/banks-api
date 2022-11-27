@@ -4,4 +4,4 @@ BanksAPI is a simple REST API for getting Bangladeshi banks and their branch nam
 
 ## Guide
 
-For examples and more, you can visit https://jsonplaceholder.typicode.com
+For examples and more, you can visit https://banks-api.sohan.dev/
