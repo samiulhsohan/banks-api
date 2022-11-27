@@ -94,7 +94,7 @@ function Route({ title, url }: { title: string; url: string }) {
       </h2>
       <a
         href={url}
-        className="font-mono text-slate-900 hover:underline"
+        className="font-mono text-slate-900 hover:underline break-words"
         target="_blank"
         rel="noreferrer"
       >
